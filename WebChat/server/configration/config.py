@@ -1,0 +1,17 @@
+# 数据协议相关配置
+REQUEST_LOGIN='1001' #登陆请求
+REQUEST_CHAT='1002' #聊天请求
+RESPONSE_LOGIN_RESULT='1001'  #登录结果响应
+RESPONSE_CHAT='1002'    #聊天响应
+DELIMITER='|'   #自定义协议数据分隔符
+
+#服务器相关配置
+SERVER_IP='10.147.4.112'
+SERVER_PORT=8063
+
+#数据库相关配置
+DB_HOST='10.147.4.112'
+DB_PORT=3306
+DB_NAME='mini_chat'
+DB_USER='root'
+DB_PASS='zjz666666'
