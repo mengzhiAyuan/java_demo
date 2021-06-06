@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScrip语法细节</title>
+    <script type="text/javascript">
+        function onclickCheck(){
+            //当我们要操作一个标签的时候，一定要获取这个标签对象
+            let username = document.getElementById("username");
+            let patt=/^\w{6,12}$/;
+            if(patt.test(username.value)){
+                alert("true");
+            }else{
+                alert("false");
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value="naruto"/>
+    <button onclick="onclickCheck();">校验</button>
+</body>
+</html>

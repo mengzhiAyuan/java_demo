@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        /*$(function () {//表示页面加载完成之后，相当于window.onload=function(){}
+            let $1 = $("#007");
+            $1.click(function () {
+                alert("JQuery单击事件");
+            });
+        });*/
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //不传参数是获取，传递参数是设置
+            alert($("div").html());
+            $("div").html("<h1>111111111<h1/>");
+            //不传参数是获取，传递参数是设置
+            alert($("div").text());
+            $("div").text("<h1>111111111<h1/>");
+            //不传参数是获取，传递参数是设置
+            $("#008").click(function () {
+                alert($("#username").val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="007">love</button>
+    <div>我是div标签<span>我是div中的span标签</span></div>
+    <input type="text" name="username" id="username" value="NARUTO"/>
+    <button id="008">naruto</button>
+</body>
+</html>

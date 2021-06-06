@@ -1,0 +1,31 @@
+td{
+    border: 3px solid aliceblue;
+}
+a{
+    color: black;
+    font-size: 36px;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    margin-left: 600px;
+}
+.class01{
+    color: black;
+    border: aqua solid 2px;
+    font-size: 36px;
+}
+.class02{
+    color: aliceblue;
+    font-size: 36px;
+}
+#id001,.class03{
+    color: black;
+    border: aqua solid 2px;
+    font-size: 60px;
+}
+#id002{
+    border: black 2px solid;
+    margin-left: 500px;
+    margin-right: auto;
+}

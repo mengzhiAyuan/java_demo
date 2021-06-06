@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScrip</title>
+   <!-- js 中script标签可以定义js代码，也可以引入js文件，但只能二选一，否则应该另开script标签-->
+    <script type="text/javascript" src="style1.js"></script>
+    <script type="text/javascript">
+        /*let data=[];
+        data[2]=3;
+        alert(typeof(data[2]));
+        alert(typeof(data[9]));
+        alert(data.length);*/
+        //js中的数组，只要我们对数组的最大下标赋值，那么，最大的下标会自动进行扩容操作
+    </script>
+    <script type="text/javascript">
+        //函数
+        /*function f1() {
+            alert("无参函数f1被调用了");
+        }
+        f1();
+        function f2(a,b) {
+            alert("有参函数f2被调用了"+a+b);
+        }
+        f2(2,6);
+        function f3(num1,num2) {
+            let result=num1+num2;
+        }
+        f3(66,6);
+        let f4=function() {
+            alert("naruto lalala");
+        }
+        f4(9,99,999,9999,99999);*/
+        //js中的函数不允许重载，否则会覆盖上一次的定义，隐形参数的原因
+    </script>
+    <script type="text/javascript">
+        /*Object形式自定义对象
+        let lover = new Object();
+        lover.name="naruto";
+        lover.age=19;
+        lover.fun=function () {
+            alert("kawayi");
+        }*/
+        //花括号形式自定义对象
+        /*let LOVE={
+            name: "NARUTO",
+            age: 15,
+            fun: function () {
+                alert("LOVE YOU FOREVER!!!");
+            }
+        }
+        LOVE.fun();*/
+    </script>
+    <script type="text/javascript">
+        //静态注册onload事件，onload事件是浏览器解析页面之后会自动触发的事件
+        function onloadHi() {
+            alert("静态注册onload事件")
+        }
+        //onload事件动态注册，是固定写法
+        /*window.onload=function () {
+            alert("动态注册onload事件");
+        }*/
+        function onclickHi() {
+            alert("静态注册onclick事件");
+        }
+        //动态注册onclick事件
+        window.onload=function(){//注意会被静态onload覆盖，要运行必须先注释静态代码
+            //1.获取标签对象
+            let elementById = document.getElementById("but001");
+            //2.通过标签对象.事件名=function(){}
+            elementById.onclick=function () {
+                alert("动态注册onclick事件");
+            }
+        }
+    </script>
+</head>
+<body onload="onloadHi();">
+        <!--静态注册onclick事件-->
+        <button onclick="onclickHi();">按钮1</button>
+        <button id="but001">按钮2</button>
+</body>
+</html>

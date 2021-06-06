@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单 对表单操作的必会代码</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        /*$(function () {
+            //批量操作单选
+            $(":radio").val(["boy"]);
+            //批量操作多选
+            $(":checkbox").val(["C","C++"]);
+            //操作单选下拉框状态
+            $("#Country").val(["中国"]);
+            //一次性选中
+            $(":radio,:checkbox,#Country").val(["boy","C","C++","中国"]);
+        });*/
+        $(function () {
+            $("#language").click(function () {
+                $(":checkbox[class='.class01']").prop("checked",true);
+            });//全选
+            $("#language_").click(function () {
+                $(":checkbox").prop("checked",false);
+            });//全不选
+            $("#item").click(function () {
+                $(":checkbox[class='.class01'],:radio[name='sex']").each(function () {
+                    this.checked=!this.checked;
+                });
+            });//反选，这里参与反选的元素有性别，有喜欢的语言
+            $(":checkbox[class='.class01'],#language,#item").click(function () {
+                //获得所有的喜欢语言数量,单击，全选，反选都要检查#conserve状态
+                let allCount=$(":checkbox[class='.class01']").length;
+                //获得选中的语言数量
+                let checkedCount=$(":checkbox[class='.class01']:checked").length;
+                $("#conserve").prop("checked",allCount==checkedCount);
+            });
+            //给全选/全不选绑定单击事件
+            $("#conserve").click(function () {
+                //在事件function中，有个this对象，这个对象是当前相应事件的dom对象
+                $(":checkbox[class='.class01']").prop("checked",this.checked);
+            });
+        })
+    </script>
+</head>
+<body>
+    <!-- form标签就是表单-->
+    <form>
+        用户名称：<input type="text" value="naruto"/><br/>
+        用户密码：<input type="password"/><br/>
+        确定密码: <input type="password"/><br/>
+        性别：<input type="radio" name="sex" value="boy" class=".class01"/>男
+             <input type="radio" name="sex" value="women" class=".class01"/>女<br/>
+        喜欢的语言：<input type="checkbox" value="C" class=".class01"/>C<input type="checkbox" value="C++" class=".class01"/>C++
+                <input type="checkbox" value="java" class=".class01"/>java
+                <input type="checkbox" value="python" class=".class01"/>python<br/>
+                <input type="checkbox" id="conserve">全选/全不选
+        国籍：<select id="Country">
+        <option>请选择国籍</option>
+        <option>中国</option>
+        <option>美国</option>
+        <option>日本</option>
+    </select><br/>
+        你为什么喜欢鸣人：<br/><textarea rows="10" cols="20">鸣人阳光</textarea><br/>
+        <input type="reset"/>
+        <input type="submit"/>
+        <input type="button" value="I LOVE YOU">
+    </form>
+        <button id="language">语言全选</button>
+        <button id="language_">语言全不选</button>
+        <button id="item">反选</button>
+</body>
+</html>
